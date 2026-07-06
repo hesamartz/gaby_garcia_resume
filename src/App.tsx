@@ -9,8 +9,8 @@ import {
 	CakeRounded,
 	WhatsApp,
 } from "@mui/icons-material";
-
 import "./App.css";
+import PROFILE_IMAGE from "./assets/bg-profile-001.png";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -19,7 +19,6 @@ import Divider from "@mui/material/Divider";
 import LocationOnRounded from "@mui/icons-material/LocationOnRounded";
 import { Avatar } from "@mui/material";
 
-const PROFILE_IMAGE = "src/assets/bg-profile-001.png";
 const mail = "gaby.garcia.ramirez12@gmail.com";
 const phoneNumber = "(55) 2940-1573";
 const address = "Ciudad Azteca 1a Sección, Ecatepec de Morelos, Estado de México, C.P. 55120";
