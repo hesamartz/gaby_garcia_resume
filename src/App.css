@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   padding: 32px;
   display: flex;
+  background: #e9eef0;
   justify-content: center;
   align-items: flex-start;
 }
@@ -21,7 +22,7 @@ body {
   width: 100%;
   max-width: 1100px;
   min-height: 1450px;
-  background: #ffffff;
+  background: #e9eef0;
   display: grid;
   grid-template-columns: 330px 1fr;
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
@@ -76,10 +77,11 @@ body {
 
 .contact-item {
   display: flex;
+  flex-direction: row;
   gap: 6px;
   align-items: center;
   justify-content: flex-start;
-  align-self: flex-start;
+  align-self: center;
   margin-bottom: 18px;
 }
 
@@ -297,19 +299,198 @@ body {
 /* PRINT */
 
 @media print {
-  body {
+  @page {
+    size: 216mm 279mm;
+    margin: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    width: 216mm;
+    height: auto !important;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
     background: #ffffff;
+    font-size: 10px;
   }
 
   .cv-page {
     padding: 0;
+    margin: 0;
+    min-height: unset;
+    background: transparent;
+    display: block;
   }
 
   .cv-container {
-    max-width: none;
-    width: 100%;
-    min-height: 100vh;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 216mm;
+    max-width: 216mm;
+    min-height: unset;
+    height: auto;
     box-shadow: none;
+    background: #e9eef0;
+    page-break-inside: auto;
+  }
+
+  .cv-sidebar {
+    width: 230px !important;
+    flex-shrink: 0 !important;
+    padding: 22px 18px;
+    background: linear-gradient(180deg, #123c46 0%, #0f2f38 100%) !important;
+    box-sizing: border-box !important;
+  }
+
+  .profile-photo-wrap {
+    width: 160px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 14px;
+  }
+
+  .sidebar-title {
+    font-size: 10px !important;
+    margin-bottom: 8px !important;
+    letter-spacing: 1.2px;
+  }
+
+  .sidebar-divider {
+    margin: 12px 0 !important;
+  }
+
+  .contact-item {
+    margin-bottom: 10px;
+  }
+
+  .sidebar-text {
+    font-size: 9px !important;
+    line-height: 1.5 !important;
+  }
+
+  .chip-list {
+    gap: 3px;
+  }
+
+  .chip-list .MuiChip-root {
+    font-size: 9px;
+    height: 20px;
+  }
+
+  .cv-main {
+    flex-grow: 1 !important;
+    padding: 24px 28px 20px;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-section {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+
+  .candidate-name {
+    font-size: 28px !important;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px !important;
+  }
+
+  .candidate-role {
+    font-size: 11px !important;
+  }
+
+  .content-section {
+    margin-bottom: 16px;
+  }
+
+  .objective-card {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .section-heading {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 13px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .section-text {
+    font-size: 9.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .timeline-item {
+    gap: 10px;
+    margin-bottom: 12px;
+    grid-template-columns: 14px 1fr;
+  }
+
+  .timeline-item::before {
+    top: 14px;
+    bottom: -12px;
+  }
+
+  .timeline-dot {
+    width: 11px;
+    height: 11px;
+    margin-top: 3px;
+    border-width: 3px;
+  }
+
+  .item-title {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .item-subtitle {
+    font-size: 9.5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .experience-list {
+    margin-top: 4px;
+    padding-left: 14px;
+  }
+
+  .experience-list li {
+    font-size: 9px;
+    line-height: 1.45;
+    margin-bottom: 2px;
+  }
+
+  .skills-grid {
+    gap: 10px;
+  }
+
+  .skill-card {
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .skill-title {
+    font-size: 10px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .bottom-grid {
+    gap: 10px;
+  }
+
+  .compact-section {
+    border-radius: 10px;
+    padding: 12px;
   }
 }
 

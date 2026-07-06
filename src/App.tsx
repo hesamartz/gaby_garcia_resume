@@ -7,6 +7,7 @@ import {
 	AssignmentIndRounded,
 	PhoneAndroidRounded,
 	CakeRounded,
+	WhatsApp,
 } from "@mui/icons-material";
 
 import "./App.css";
@@ -76,6 +77,7 @@ function App() {
 								}}
 								label={phoneNumber}
 							/>
+							<WhatsApp sx={{ color: "whitesmoke" }} onClick={() => window.open(`https://wa.me/52${phoneNumber.replace(/\D/g, "")}`, "_blank")} />
 						</Box>
 
 						<Box className="contact-item">
@@ -105,6 +107,7 @@ function App() {
 									},
 								}}
 								label={mail}
+								onClick={() => window.open(`mailto:${mail}`, "_blank")}
 							/>
 						</Box>
 					</Box>
@@ -117,6 +120,7 @@ function App() {
 									variant="filled"
 									color="default"
 									label={address}
+									onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, "_blank")}
 									sx={{
 										width: "fit-content",
 										maxWidth: "100%",
@@ -427,7 +431,7 @@ function App() {
 								<ul className="experience-list">
 									<li>Registro contable de operaciones y conciliaciones bancarias.</li>
 									<li>Gestión administrativa mediante sistemas Quiter y SIA.</li>
-									<li>Facturación y control de ingresos/egresos de la agencia.</li>
+									<li>Tesorera</li>
 								</ul>
 							</Box>
 						</Box>
@@ -446,6 +450,7 @@ function App() {
 									<li>Captura de pólizas contables e información para declaración de impuestos.</li>
 									<li>Control y comprobación de gastos de la empresa.</li>
 									<li>Apoyo en elaboración de estados financieros y reportes administrativos.</li>
+									<li>Facturación y control de ingresos/egresos de la agencia.</li>
 								</ul>
 							</Box>
 						</Box>
@@ -587,9 +592,9 @@ function App() {
 							</Box>
 							<Box sx={{ display: "flex", flexDirection: "column", gap: "10px", mt: 0.5 }}>
 								{[
+									{ name: "Patricia Mora Navarrete", phone: "(55) 2893-4059" },
+									{ name: "Evelyn Martínez", phone: "(56) 2405-7489" },
 									{ name: "Hegel Saúl Martínez Corona", phone: "(55) 4313-2514" },
-									{ name: "Georgina García", phone: "(55) 7373-7271" },
-									{ name: "Leonides Pizano", phone: "(55) 5651-5856" },
 								].map((ref, i) => (
 									<Box key={i} sx={{ display: "flex", flexDirection: "column", gap: "1px", paddingLeft: "10px", borderLeft: "2px solid #d5e0e3" }}>
 										<Typography sx={{ fontSize: "14.5px", fontWeight: 700, color: "#1f2933", lineHeight: 1.3 }}>
